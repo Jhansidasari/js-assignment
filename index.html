@@ -1,0 +1,53 @@
+<html>
+    <head>
+        <script>
+            function reverse() {
+                const string = document.getElementById("input").value;
+                let reversedString = "";
+                for (let i = string.length - 1; i >= 0; i--) {
+                    reversedString += string[i];
+                }
+
+                document.getElementById("reversed_string").innerHTML = reversedString;
+
+            }
+
+            function sort() {
+                const array_string = document.getElementById("array_input").value;
+                const nums = array_string.split(",");
+                
+
+                for (let i = 0; i < nums.length; i++) {
+                    for (let j = i; j < nums.length; j++) {
+                        if (nums[i] < nums[j]) {
+                            let swap = nums[i];
+                            nums[i] = nums[j];
+                            nums[j] = swap;
+                        }
+                    }
+                }
+
+                document.getElementById("sorted_numbers").innerHTML = nums.toString();
+                console.log(nums);
+
+            }
+        </script>
+    </head>
+    <body>
+        <input id="input" placeholder="Enter the sentence" />
+        <button onClick="reverse();">Submit</button>
+
+        <br/>
+        <div>
+            <h1 id="reversed_string"></h1>
+        </div>
+
+
+        <input id="array_input" placeholder="Enter the array separated by commas" />
+        <button onclick="sort();">Submit</button>
+
+        <div>
+            <h1 id="sorted_numbers"></h1>
+        </div>
+    </body>
+</html>
